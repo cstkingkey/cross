@@ -14,6 +14,11 @@ if grep -i ubuntu /etc/os-release >/dev/null; then
     sed -i 's/http:\/\/\(.*\).ubuntu.com\/ubuntu\//[arch=amd64,i386] http:\/\/\1.archive.ubuntu.com\/ubuntu\//g' /etc/apt/sources.list
 fi
 
+if grep -i debian /etc/os-release >/dev/null; then
+   sed -i "s@http://deb.debian.org@http://mirrors.163.com@g" /etc/apt/sources.list
+   sed -i "s@http://security.debian.org@http://mirrors.163.com@g" /etc/apt/sources.list
+fi
+
 install_packages \
     autoconf \
     automake \

@@ -16,8 +16,8 @@ main() {
 
     pushd "${td}"
 
-    curl --retry 3 -sSfL "https://github.com/Kitware/CMake/releases/download/v${version}/cmake-${version}-linux-x86_64.sh" -o cmake.sh
-    sh cmake.sh --skip-license --prefix=/usr/local
+    # curl --retry 3 -sSfL "https://github.com/Kitware/CMake/releases/download/v${version}/cmake-${version}-linux-x86_64.sh" -o cmake.sh
+    sh /cmake-3.23.1-linux-x86_64.sh --skip-license --prefix=/usr/local
 
     popd
 

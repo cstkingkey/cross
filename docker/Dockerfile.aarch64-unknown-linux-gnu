@@ -5,6 +5,7 @@ COPY common.sh lib.sh /
 RUN /common.sh
 
 COPY cmake.sh /
+COPY cmake-3.23.1-linux-x86_64.sh /
 RUN /cmake.sh
 
 COPY xargo.sh /
