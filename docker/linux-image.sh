@@ -99,8 +99,11 @@ main() {
             deps=(libcrypt1:"${arch}")
             ;;
         mips64el)
-            kernel='5.*-5kc-malta'
-            deps=(libcrypt1:"${arch}")
+            libgcc="libgcc1"
+            debsource="deb http://http.debian.net/debian/ buster main"
+            debsource="${debsource}\ndeb http://security.debian.org/ buster/updates main"
+            kernel='4.*-5kc-malta'
+            ncurses="=6.1*"
             ;;
         powerpc)
             # there is no buster powerpc port, so we use jessie
