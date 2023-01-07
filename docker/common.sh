@@ -12,6 +12,7 @@ set -euo pipefail
 if grep -i ubuntu /etc/os-release >/dev/null; then
     sed 's/http:\/\/\(.*\).ubuntu.com\/ubuntu\//[arch-=amd64,i386] http:\/\/ports.ubuntu.com\/ubuntu-ports\//g' /etc/apt/sources.list > /etc/apt/sources.list.d/ports.list
     sed -i 's/http:\/\/\(.*\).ubuntu.com\/ubuntu\//[arch=amd64,i386] http:\/\/\1.archive.ubuntu.com\/ubuntu\//g' /etc/apt/sources.list
+    sed -i "s@http://.*ubuntu.com@http://mirrors.163.com@g" /etc/apt/sources.list
 fi
 
 if grep -i debian /etc/os-release >/dev/null; then
